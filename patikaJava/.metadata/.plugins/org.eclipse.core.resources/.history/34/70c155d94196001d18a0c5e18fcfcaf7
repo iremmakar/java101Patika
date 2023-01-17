@@ -1,0 +1,29 @@
+package recursiveDesen;
+
+public class Main {
+	
+	static int desen(int number,int temp) {
+		
+		if(number>0  ) {
+			System.out.println(number);
+			return desen(number-5,temp);	
+		}else if(number<=0 && temp!=number){
+			System.out.println(number);
+			return desen(number+5,temp);
+		}else {
+			System.out.println(number);
+			return number;
+		}
+		
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		desen(15,15);
+
+	}
+
+}
+

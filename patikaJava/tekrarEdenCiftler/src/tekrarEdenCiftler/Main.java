@@ -1,0 +1,19 @@
+package tekrarEdenCiftler;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] numbers = {2,2,4,5,6,7,8,9,7,6,4,2};
+		for(int i=0;i<numbers.length;i++) {
+			for(int j=i+1;j<numbers.length;j++) {
+				if(numbers[i]==numbers[j] && numbers[i]%2==0) {
+					System.out.println(numbers[i]);
+				}
+			}
+		}
+		
+		
+
+	}
+
+}

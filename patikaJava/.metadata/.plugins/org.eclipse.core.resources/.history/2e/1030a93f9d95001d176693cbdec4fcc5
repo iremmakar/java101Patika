@@ -1,0 +1,24 @@
+package palindromKelime;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String x = "abba";
+		int count=0;
+		int uzunluk = x.length()-1;
+		int boyut=x.length()/2;
+		
+		for(int i =0;i<uzunluk/2;i++) {
+			if(x.charAt(i)==x.charAt(uzunluk)) {
+				count++;
+			}
+			uzunluk--;
+		}
+		
+		if(count==boyut) {
+			System.out.println("palindorm");
+		}
+
+	}
+
+}

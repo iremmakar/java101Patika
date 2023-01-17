@@ -1,0 +1,30 @@
+package fibonacci;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int eleman;
+		Scanner inp = new Scanner(System.in);
+		
+		eleman = inp.nextInt();
+		int eleman1=0, eleman2=1,eleman3;
+		
+		for(int i=2;i<eleman;i++) {
+			eleman3=eleman1+eleman2;
+			eleman2=eleman3;
+			eleman1=eleman2;
+			System.out.println(eleman3+" ");
+			
+			
+			
+		}
+		
+		
+		
+		
+
+	}
+
+}

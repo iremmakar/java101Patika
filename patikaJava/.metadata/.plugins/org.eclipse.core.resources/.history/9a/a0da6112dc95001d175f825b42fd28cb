@@ -1,0 +1,39 @@
+package enYakinMinMax;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] arr = {15,12,788,1,-1,-778,2,0};
+		int sayi = 5;
+		
+		int min1 = arr[0]-sayi;
+		int min2 = arr[0]-sayi;
+		
+		for(int x: arr) {
+			
+			if(x<sayi) {
+				int fark = sayi-x;
+				if(fark<min1) {
+					min1=fark;
+				}
+			}
+			
+			if(x>sayi) {
+				int fark = x-sayi;
+				if(fark<min2) {
+					fark=min2;
+				}
+			}
+		
+		}
+		
+		System.out.println("Max:"+min1+"Min: "+min2);
+		
+		
+		// olmadı tekaradan bakkkk!!!
+		
+		
+
+	}
+
+}

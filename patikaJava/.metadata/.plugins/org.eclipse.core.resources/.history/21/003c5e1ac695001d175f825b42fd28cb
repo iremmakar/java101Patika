@@ -1,0 +1,17 @@
+package mayinTarlasi;
+
+public class Main {
+
+	public static void main(String[] args) {
+		MineSweeper mineSweeper = new MineSweeper(6,4);
+		String arr[][] = mineSweeper.mayinKonum();
+		
+		for(int x=0;x<arr.length;x++) {
+			for(int y=0;y<arr[x].length;y++) {
+				mineSweeper.mayinVarMi();
+			}
+		}
+		
+	}
+
+}

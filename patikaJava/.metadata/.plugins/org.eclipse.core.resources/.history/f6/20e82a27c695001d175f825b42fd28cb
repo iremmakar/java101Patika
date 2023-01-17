@@ -1,0 +1,118 @@
+package mayinTarlasi;
+
+import java.util.Scanner;
+
+public class MineSweeper {
+	int rowNumber;
+	int colNumber;
+	
+	MineSweeper(int row,int col){
+		this.rowNumber=row;
+		this.colNumber=col;
+	}
+
+	public String[][] mayinKonum() {
+		int mayin = (this.rowNumber*this.colNumber)/4;
+		String mayinArr[][]=new String[this.rowNumber][this.colNumber];
+
+		for(int j=0;j<mayin;j++) {
+			int x= (int)(Math.random()*this.rowNumber);
+			int y=(int)(Math.random()*this.colNumber);
+			
+			
+			if(mayinArr[x][y]!="*") {
+			mayinArr[x][y]="*";
+			}else {
+				j--;
+				
+			}	
+		}
+		/*
+		for(int x=0;x<rowNumber;x++) {
+			for(int y=0;y<colNumber;y++) {
+				
+				if(mayinArr[x][y]!="*") {
+					mayinArr[x][y]="-";
+				}
+				System.out.print(mayinArr[x][y]);
+			}
+			System.out.println();
+		}	*/
+		return mayinArr;
+	}
+	
+	public void mayinVarMi() {
+		String arr[][] = mayinKonum();
+		
+		Scanner scan = new Scanner(System.in);
+		int arr2[][] =new int[this.rowNumber][this.colNumber];
+		int x,y;
+		 x = scan.nextInt();
+			y=scan.nextInt();
+		for(int i=0;i<this.rowNumber;i++) {
+			for(int j=0;j<this.colNumber;j++) {
+			
+				
+				int a=x--;
+				int b=y--;
+				int count=0;
+				
+				if(a>=0 && a!=this.rowNumber && b>=0 && b!=this.colNumber) {
+					if(arr[a][b]=="*") {
+						count++;
+					}
+					if(arr[a][y]=="*") {
+						count++;
+					}
+					if(arr[a][y+1]=="*") {
+						count++;
+					}
+					if(arr[x][y]=="*") {
+						count++;
+					}
+					if(arr[x+1][b]=="*") {
+						count++;
+					}
+					if(arr[x+1][y]=="*") {
+						count++;
+					}
+					if(arr[x+1][y+1]=="*") {
+						count++;
+					}
+					if(arr[x][y+1]=="*") {
+						count++;
+					}
+					
+					
+					
+				}
+				System.out.println("count");
+				arr2[x][y]=count;
+				
+				
+				
+				
+				
+				
+			}
+		}
+		
+		for(int e=0;e<this.rowNumber;e++) {
+			for(int r=0;r<this.colNumber;r++) {
+				System.out.println(arr2[e][r]);
+			}
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,46 @@
+package mayinTarlasi;
+
+public class MineSweeper {
+	int rowNumber;
+	int colNumber;
+	
+	MineSweeper(int row,int col){
+		this.rowNumber=row;
+		this.colNumber=col;
+	}
+	String mayinArr[][]=new String[this.rowNumber][this.colNumber];
+
+	public void mayinKonum() {
+		int mayin = (this.rowNumber*this.colNumber)/4;
+		
+		for(int j=0;j<mayin;j++) {
+			int x= (int)(Math.random()*this.rowNumber);
+			int y=(int)(Math.random()*this.colNumber);
+			
+			
+			if(mayinArr[x][y]!="*") {
+			mayinArr[x][y]="*";
+			}else {
+				j--;
+				
+			}	
+		}	
+		for(int x=0;x<rowNumber;x++) {
+			for(int y=0;y<colNumber;y++) {
+				
+				if(mayinArr[x][y]!="*") {
+					mayinArr[x][y]="-";
+				}
+				System.out.print(mayinArr[x][y]);
+			}
+			System.out.println();
+		}	
+	}
+	
+	
+	
+	
+	
+	
+	
+}
